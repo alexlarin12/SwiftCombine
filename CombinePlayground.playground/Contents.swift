@@ -50,37 +50,5 @@ example(of: "HomeWork: Lesson 2: part 2") {
         })
         .store(in: &subscriptions)
 }
-example(of: "Custom Subscriber") {
-    // 1
-    let publisher = (1...6).publisher
-    
-    // 2
-    final class IntSubscriber: Subscriber {
-        // 3
-        typealias Input = Int
-        typealias Failure = Never
-        
-        // 4
-        func receive(subscription: Subscription) {
-            subscription.request(.max(5))
-        }
-        
-        // 5
-        func receive(_ input: Int) -> Subscribers.Demand {
-            print("Received value", input)
-            return .none
-        }
-        
-        // 6
-        func receive(completion: Subscribers.Completion<Never>) {
-            print("Received completion", completion)
-        }
-    }
-    
-    let subscriber = IntSubscriber()
-
-    publisher.subscribe(subscriber)
-    
-}
 
 
