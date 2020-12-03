@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MonitorObject: ObservableObject {
+class RandomsObject: ObservableObject {
     @Published var firstRandom: Character = "A"
     @Published var secondRandom: Character = "B"
     @Published var thirdRandom: Character = "C"

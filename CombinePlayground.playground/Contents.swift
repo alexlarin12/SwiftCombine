@@ -3,6 +3,7 @@ import Foundation
 import Combine
 
 
+
 private var subscriptions = Set<AnyCancellable>()
 
 public func example(of description: String, action: () -> Void) {
@@ -403,12 +404,3 @@ example(of: "Lesson3"){
         pablisher1.send("day")
     })}
 
-
-
-
-let queue = OperationQueue()
-
-let subscription = queue.publisher(for: \.operationCount)
-   .sink {
-      print("Outstanding operations in queue: \($0)")
-   }

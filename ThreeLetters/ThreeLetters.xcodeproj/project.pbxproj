@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		43C02A9A2575913A00ACDEF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C02A982575913A00ACDEF5 /* LaunchScreen.storyboard */; };
 		43C02AA52575913A00ACDEF5 /* ThreeLettersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C02AA42575913A00ACDEF5 /* ThreeLettersTests.swift */; };
 		43C02AB02575913A00ACDEF5 /* ThreeLettersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C02AAF2575913A00ACDEF5 /* ThreeLettersUITests.swift */; };
+		43C02AC32577FFAC00ACDEF5 /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 43C02AC22577FFAC00ACDEF5 /* CombineExt */; };
+		43C02AC82578027E00ACDEF5 /* RandomsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C02AC72578027E00ACDEF5 /* RandomsObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		43C02AAB2575913A00ACDEF5 /* ThreeLettersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThreeLettersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43C02AAF2575913A00ACDEF5 /* ThreeLettersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeLettersUITests.swift; sourceTree = "<group>"; };
 		43C02AB12575913A00ACDEF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43C02AC72578027E00ACDEF5 /* RandomsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomsObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43C02AC32577FFAC00ACDEF5 /* CombineExt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,7 @@
 				43C02A962575913A00ACDEF5 /* Assets.xcassets */,
 				43C02A982575913A00ACDEF5 /* LaunchScreen.storyboard */,
 				43C02A9B2575913A00ACDEF5 /* Info.plist */,
+				43C02AC72578027E00ACDEF5 /* RandomsObject.swift */,
 			);
 			path = ThreeLetters;
 			sourceTree = "<group>";
@@ -144,6 +149,9 @@
 			dependencies = (
 			);
 			name = ThreeLetters;
+			packageProductDependencies = (
+				43C02AC22577FFAC00ACDEF5 /* CombineExt */,
+			);
 			productName = ThreeLetters;
 			productReference = 43C02A8A2575913900ACDEF5 /* ThreeLetters.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 43C02A812575913900ACDEF5;
+			packageReferences = (
+				43C02AC12577FFAC00ACDEF5 /* XCRemoteSwiftPackageReference "CombineExt" */,
+			);
 			productRefGroup = 43C02A8B2575913900ACDEF5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C02A922575913900ACDEF5 /* ViewController.swift in Sources */,
+				43C02AC82578027E00ACDEF5 /* RandomsObject.swift in Sources */,
 				43C02A8E2575913900ACDEF5 /* AppDelegate.swift in Sources */,
 				43C02A902575913900ACDEF5 /* SceneDelegate.swift in Sources */,
 			);
@@ -593,6 +605,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43C02AC12577FFAC00ACDEF5 /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43C02AC22577FFAC00ACDEF5 /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43C02AC12577FFAC00ACDEF5 /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 43C02A822575913900ACDEF5 /* Project object */;
 }

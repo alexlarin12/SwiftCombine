@@ -1,24 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ThreeLetters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-kM-fmu">
+                                <rect key="frame" x="132" y="114" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="B1K-fS-fnD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="TG8-U5-wQ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="20"/>
+                                <state key="normal" title="START/STOP"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LND-uB-5yu"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKm-D5-ZSg">
+                                <rect key="frame" x="107" y="214" width="200" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A80-Tq-Qpj">
+                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="100"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYk-kx-oLe">
+                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="100"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3g-U1-eqR">
+                                        <rect key="frame" x="133" y="0.0" width="67" height="100"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="OxI-DL-ISX"/>
+                                    <constraint firstAttribute="width" constant="200" id="Q1J-l3-En0"/>
+                                    <constraint firstItem="hYk-kx-oLe" firstAttribute="width" secondItem="gKm-D5-ZSg" secondAttribute="width" multiplier="0.333" id="RbL-gK-6aB"/>
+                                    <constraint firstItem="A80-Tq-Qpj" firstAttribute="width" secondItem="gKm-D5-ZSg" secondAttribute="width" multiplier="0.333" id="ayU-WU-wMo"/>
+                                </constraints>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qv-CO-B5c">
+                                <rect key="frame" x="107" y="414" width="200" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="P1V-VU-QaH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="62"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <color key="highlightedColor" systemColor="labelColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gKm-D5-ZSg" firstAttribute="centerX" secondItem="jfh-kM-fmu" secondAttribute="centerX" id="7g9-kE-Ocj"/>
+                            <constraint firstItem="jfh-kM-fmu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A9I-JI-6Fy"/>
+                            <constraint firstItem="2Qv-CO-B5c" firstAttribute="centerX" secondItem="gKm-D5-ZSg" secondAttribute="centerX" id="Mds-N2-xy0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2Qv-CO-B5c" secondAttribute="bottom" constant="20" id="Y2H-RU-gP3"/>
+                            <constraint firstItem="jfh-kM-fmu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="m2h-R3-VXw"/>
+                            <constraint firstItem="2Qv-CO-B5c" firstAttribute="top" secondItem="gKm-D5-ZSg" secondAttribute="bottom" constant="100" id="xa8-TO-cfc"/>
+                            <constraint firstItem="gKm-D5-ZSg" firstAttribute="top" secondItem="jfh-kM-fmu" secondAttribute="bottom" constant="50" id="z0e-iX-a3l"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="aLabel" destination="A80-Tq-Qpj" id="8Oe-kW-efq"/>
+                        <outlet property="bLabel" destination="hYk-kx-oLe" id="Xm3-9q-M2L"/>
+                        <outlet property="buttonTap" destination="jfh-kM-fmu" id="fjk-QW-D4R"/>
+                        <outlet property="cLabel" destination="A3g-U1-eqR" id="uz1-Vm-AL9"/>
+                        <outlet property="winLabel" destination="2Qv-CO-B5c" id="NzV-zC-DTr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="94"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
