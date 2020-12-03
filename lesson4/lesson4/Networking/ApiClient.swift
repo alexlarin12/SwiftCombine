@@ -15,22 +15,24 @@ struct APIClient {
     
     func character(id: Int) -> AnyPublisher<Character, NetworkError> {
         URLSession.shared
-             .dataTaskPublisher(for: Method.character(id).url)
-             .receive(on: queue)
-             .map(\.data)
-             .decode(type: Character.self, decoder: decoder)
-//             .catch { _ in Empty<Character, Error>() }
+            .dataTaskPublisher(for: Method.character(id).url)
+            .receive(on: queue)
+            .map(\.data)
+            .decode(type: Character.self, decoder: decoder)
+            .print("Publisher")
+            //             .catch { _ in Empty<Character, Error>() }
             .mapError({ error -> NetworkError in
                 switch error {
                 case is URLError:
-                  return NetworkError.unreachableAddress(url: Method.character(id).url)
+                    return NetworkError.unreachableAddress(url: Method.character(id).url)
                 default:
-                  return NetworkError.invalidResponse
+                    return NetworkError.invalidResponse
                 }
             })
-             .eraseToAnyPublisher()
-     }
-    
+            .eraseToAnyPublisher()
+        
+    }
+ 
     func mergedCharacters(ids: [Int]) -> AnyPublisher<Character, NetworkError> {
          precondition(!ids.isEmpty)
          
@@ -45,21 +47,21 @@ struct APIClient {
      }
     func location(id: Int) -> AnyPublisher<Location, NetworkError> {
         URLSession.shared
-             .dataTaskPublisher(for: Method.location(id).url)
-             .receive(on: queue)
-             .map(\.data)
-             .decode(type: Location.self, decoder: decoder)
-//             .catch { _ in Empty<Character, Error>() }
+            .dataTaskPublisher(for: Method.location(id).url)
+            .receive(on: queue)
+            .map(\.data)
+            .decode(type: Location.self, decoder: decoder)
+            //             .catch { _ in Empty<Character, Error>() }
             .mapError({ error -> NetworkError in
                 switch error {
                 case is URLError:
-                  return NetworkError.unreachableAddress(url: Method.location(id).url)
+                    return NetworkError.unreachableAddress(url: Method.location(id).url)
                 default:
-                  return NetworkError.invalidResponse
+                    return NetworkError.invalidResponse
                 }
             })
-             .eraseToAnyPublisher()
-     }
+            .eraseToAnyPublisher()
+    }
     func episode(id: Int) -> AnyPublisher<Episode, NetworkError> {
         URLSession.shared
              .dataTaskPublisher(for: Method.episode(id).url)

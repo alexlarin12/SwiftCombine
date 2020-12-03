@@ -1,4 +1,5 @@
 import UIKit
+import Foundation
 import Combine
 
 
@@ -401,3 +402,13 @@ example(of: "Lesson3"){
     queue.asyncAfter(deadline: .now() + 0.7, execute: {
         pablisher1.send("day")
     })}
+
+
+
+
+let queue = OperationQueue()
+
+let subscription = queue.publisher(for: \.operationCount)
+   .sink {
+      print("Outstanding operations in queue: \($0)")
+   }

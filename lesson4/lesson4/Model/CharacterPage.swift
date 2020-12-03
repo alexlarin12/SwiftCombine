@@ -8,7 +8,7 @@
 import Foundation
 
 public struct CharacterPage: Codable {
-    
+  
     public var info: PageInfo
     public var results: [Character]
     

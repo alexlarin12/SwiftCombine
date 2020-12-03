@@ -16,54 +16,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAA-yV-Lnm">
-                                <rect key="frame" x="0.0" y="453" width="414" height="448"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0I-1V-qtx">
-                                <rect key="frame" x="83.5" y="184" width="247" height="52"/>
+                                <rect key="frame" x="107" y="164" width="200" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Episode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q5i-H0-81V">
-                                <rect key="frame" x="83.5" y="117.5" width="247" height="51.5"/>
+                                <rect key="frame" x="107" y="94" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eLA-rt-XgI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="lgT-PT-3va"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Character" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ebK-GT-Xvi">
-                                <rect key="frame" x="83.5" y="251" width="247" height="52"/>
+                                <rect key="frame" x="107" y="234" width="200" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GBF-PG-tX8">
+                                <rect key="frame" x="107" y="334" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GBF-PG-tX8" secondAttribute="height" multiplier="1:1" id="fpx-4X-80T"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyO-sP-IYp">
+                                <rect key="frame" x="107" y="304" width="200" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ogO-3r-iTg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAA-yV-Lnm">
+                                <rect key="frame" x="107" y="544" width="200" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="lpg-Q7-yAc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ebK-GT-Xvi" firstAttribute="centerX" secondItem="ZAA-yV-Lnm" secondAttribute="centerX" id="89j-w9-UGr"/>
-                            <constraint firstItem="ZAA-yV-Lnm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="DDg-am-OfT"/>
-                            <constraint firstItem="ZAA-yV-Lnm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hrf-Wh-W9E"/>
-                            <constraint firstItem="ZAA-yV-Lnm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IF2-gx-otc"/>
-                            <constraint firstItem="Y0I-1V-qtx" firstAttribute="centerX" secondItem="ebK-GT-Xvi" secondAttribute="centerX" id="R3C-Qx-RnB"/>
-                            <constraint firstItem="ebK-GT-Xvi" firstAttribute="top" secondItem="Y0I-1V-qtx" secondAttribute="bottom" constant="15" id="RRg-0d-Wsr"/>
-                            <constraint firstItem="ebK-GT-Xvi" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.03" constant="25" id="Vsc-1f-eSV"/>
-                            <constraint firstItem="ZAA-yV-Lnm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="aIg-fX-CNu"/>
-                            <constraint firstItem="Q5i-H0-81V" firstAttribute="height" secondItem="Y0I-1V-qtx" secondAttribute="height" id="aOe-XX-jAZ"/>
-                            <constraint firstItem="ZAA-yV-Lnm" firstAttribute="top" secondItem="ebK-GT-Xvi" secondAttribute="bottom" constant="150" id="ei7-w3-kQW"/>
-                            <constraint firstItem="Y0I-1V-qtx" firstAttribute="width" secondItem="ebK-GT-Xvi" secondAttribute="width" id="frb-8r-AxU"/>
-                            <constraint firstItem="Q5i-H0-81V" firstAttribute="centerX" secondItem="Y0I-1V-qtx" secondAttribute="centerX" id="hcT-ht-ahZ"/>
-                            <constraint firstItem="Q5i-H0-81V" firstAttribute="width" secondItem="Y0I-1V-qtx" secondAttribute="width" id="iou-VG-5lB"/>
-                            <constraint firstItem="ebK-GT-Xvi" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2343" constant="150" id="rzI-f6-vOW"/>
-                            <constraint firstItem="Y0I-1V-qtx" firstAttribute="height" secondItem="ebK-GT-Xvi" secondAttribute="height" id="x7r-Rg-qvr"/>
-                            <constraint firstItem="Y0I-1V-qtx" firstAttribute="top" secondItem="Q5i-H0-81V" secondAttribute="bottom" constant="15" id="y5r-ec-hLc"/>
+                            <constraint firstItem="Y0I-1V-qtx" firstAttribute="top" secondItem="Q5i-H0-81V" secondAttribute="bottom" constant="20" id="7Gj-K6-Vxh"/>
+                            <constraint firstItem="GBF-PG-tX8" firstAttribute="width" secondItem="JyO-sP-IYp" secondAttribute="width" id="EdM-Pg-ZXe"/>
+                            <constraint firstItem="ZAA-yV-Lnm" firstAttribute="top" secondItem="GBF-PG-tX8" secondAttribute="bottom" constant="10" id="JRp-BU-fDb"/>
+                            <constraint firstItem="ebK-GT-Xvi" firstAttribute="top" secondItem="Y0I-1V-qtx" secondAttribute="bottom" constant="20" id="K64-rX-Og3"/>
+                            <constraint firstItem="JyO-sP-IYp" firstAttribute="width" secondItem="ebK-GT-Xvi" secondAttribute="width" id="T2k-tP-NH8"/>
+                            <constraint firstItem="Y0I-1V-qtx" firstAttribute="centerX" secondItem="Q5i-H0-81V" secondAttribute="centerX" id="TYU-Ts-9qh"/>
+                            <constraint firstItem="JyO-sP-IYp" firstAttribute="centerX" secondItem="ebK-GT-Xvi" secondAttribute="centerX" id="VeB-ts-qLT"/>
+                            <constraint firstItem="ZAA-yV-Lnm" firstAttribute="width" secondItem="GBF-PG-tX8" secondAttribute="width" id="WeQ-kO-k4f"/>
+                            <constraint firstItem="Q5i-H0-81V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="XFI-Fu-GZg"/>
+                            <constraint firstItem="GBF-PG-tX8" firstAttribute="top" secondItem="JyO-sP-IYp" secondAttribute="bottom" constant="10" id="Ygk-W3-LWn"/>
+                            <constraint firstItem="ZAA-yV-Lnm" firstAttribute="centerX" secondItem="GBF-PG-tX8" secondAttribute="centerX" id="dHp-ra-lW3"/>
+                            <constraint firstItem="ebK-GT-Xvi" firstAttribute="width" secondItem="Y0I-1V-qtx" secondAttribute="width" id="eoO-R9-2HJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZAA-yV-Lnm" secondAttribute="bottom" constant="20" id="gyZ-Np-Ab2"/>
+                            <constraint firstItem="Q5i-H0-81V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o0D-4d-twf"/>
+                            <constraint firstItem="ebK-GT-Xvi" firstAttribute="centerX" secondItem="Y0I-1V-qtx" secondAttribute="centerX" id="q0s-Oy-qf8"/>
+                            <constraint firstItem="JyO-sP-IYp" firstAttribute="top" secondItem="ebK-GT-Xvi" secondAttribute="bottom" constant="20" id="qUR-xm-Ymq"/>
+                            <constraint firstItem="Y0I-1V-qtx" firstAttribute="width" secondItem="Q5i-H0-81V" secondAttribute="width" id="tAx-NB-B5b"/>
+                            <constraint firstItem="Y0I-1V-qtx" firstAttribute="height" secondItem="Q5i-H0-81V" secondAttribute="height" id="u6K-aQ-3Qq"/>
+                            <constraint firstItem="ebK-GT-Xvi" firstAttribute="height" secondItem="Y0I-1V-qtx" secondAttribute="height" id="vFj-Bt-r3N"/>
+                            <constraint firstItem="GBF-PG-tX8" firstAttribute="centerX" secondItem="JyO-sP-IYp" secondAttribute="centerX" id="wsX-nA-3cQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="episodeTextField" destination="Q5i-H0-81V" id="urD-7l-Ny6"/>
+                        <outlet property="imageView" destination="GBF-PG-tX8" id="7kc-sE-W99"/>
                         <outlet property="inputTextField" destination="ebK-GT-Xvi" id="9VH-30-EtH"/>
                         <outlet property="locationTextField" destination="Y0I-1V-qtx" id="1ts-2v-sxn"/>
-                        <outlet property="textLabel" destination="ZAA-yV-Lnm" id="0QU-Kq-CqY"/>
+                        <outlet property="textLabel" destination="JyO-sP-IYp" id="6UJ-6C-NuX"/>
+                        <outlet property="textLabel2" destination="ZAA-yV-Lnm" id="fuh-Of-5ns"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -14,7 +14,7 @@ class ViewModel {
         inputIdentifiersPublisher: AnyPublisher<Int, Never>
     ) {
         self.apiClient = apiClient
-        
+       
         let networking1 = inputIdentifiersPublisher.map { apiClient.character(id: $0) }.switchToLatest().share()
         self.character = networking1.eraseToAnyPublisher()
         
