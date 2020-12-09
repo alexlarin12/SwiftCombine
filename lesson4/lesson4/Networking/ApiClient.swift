@@ -12,14 +12,16 @@ struct APIClient {
     
    private let decoder = JSONDecoder()
    private let queue = DispatchQueue(label: "APIClient", qos: .default, attributes: .concurrent)
-    
+   
+   
     func character(id: Int) -> AnyPublisher<Character, NetworkError> {
         URLSession.shared
             .dataTaskPublisher(for: Method.character(id).url)
+            .retry(2)
             .receive(on: queue)
-            .map(\.data)
+            .tryMap(\.data)
             .decode(type: Character.self, decoder: decoder)
-            .print("Publisher")
+           // .print("Publisher")
             //             .catch { _ in Empty<Character, Error>() }
             .mapError({ error -> NetworkError in
                 switch error {
@@ -30,7 +32,6 @@ struct APIClient {
                 }
             })
             .eraseToAnyPublisher()
-        
     }
  
     func mergedCharacters(ids: [Int]) -> AnyPublisher<Character, NetworkError> {
@@ -48,6 +49,7 @@ struct APIClient {
     func location(id: Int) -> AnyPublisher<Location, NetworkError> {
         URLSession.shared
             .dataTaskPublisher(for: Method.location(id).url)
+            .retry(2)
             .receive(on: queue)
             .map(\.data)
             .decode(type: Location.self, decoder: decoder)
@@ -64,19 +66,20 @@ struct APIClient {
     }
     func episode(id: Int) -> AnyPublisher<Episode, NetworkError> {
         URLSession.shared
-             .dataTaskPublisher(for: Method.episode(id).url)
-             .receive(on: queue)
-             .map(\.data)
-             .decode(type: Episode.self, decoder: decoder)
-//             .catch { _ in Empty<Character, Error>() }
+            .dataTaskPublisher(for: Method.episode(id).url)
+            .retry(2)
+            .receive(on: queue)
+            .map(\.data)
+            .decode(type: Episode.self, decoder: decoder)
+            //             .catch { _ in Empty<Character, Error>() }
             .mapError({ error -> NetworkError in
                 switch error {
                 case is URLError:
-                  return NetworkError.unreachableAddress(url: Method.episode(id).url)
+                    return NetworkError.unreachableAddress(url: Method.episode(id).url)
                 default:
-                  return NetworkError.invalidResponse
+                    return NetworkError.invalidResponse
                 }
             })
-             .eraseToAnyPublisher()
-     }
+            .eraseToAnyPublisher()
+    }
 }

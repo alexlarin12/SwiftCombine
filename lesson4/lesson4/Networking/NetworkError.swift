@@ -15,7 +15,7 @@ enum NetworkError: LocalizedError {
      var errorDescription: String? {
          switch self {
          case .unreachableAddress(let url): return "\(url.absoluteString) is unreachable"
-         case .invalidResponse: return "Response with mistake"
+         case .invalidResponse: return "RESPONCE with MISTAKE"
          }
      }
 }
