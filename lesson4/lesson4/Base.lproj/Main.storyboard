@@ -25,7 +25,7 @@
                                 <rect key="frame" x="107" y="94" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eLA-rt-XgI"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="lgT-PT-3va"/>
+                                    <constraint firstAttribute="width" constant="200" id="lgT-PT-3va"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
