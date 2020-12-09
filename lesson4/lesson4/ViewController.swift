@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -14,12 +15,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var episodeTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textLabel2: UILabel!
+    
     
     var subscriptions: Set<AnyCancellable> = []
     private var viewModel1: ViewModel?
     private var viewModel2: ViewModel?
     private var viewModel3: ViewModel?
-    
+    var char:[Character] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,14 +36,17 @@ class ViewController: UIViewController {
             inputIdentifiersPublisher: inputNumberCharacter)
         
         viewModel1?.character
-            .map { $0.description }
-            .catch { _ in Empty<String, Never>() }
+            .map { $0 }
+            .catch { _ in Empty<Character, Never>() }
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { print($0) },
-                  receiveValue: { [weak self] text in
-                    self?.textLabel.text = "Character: \(text)"
-                    self?.locationTextField.text = ""
-                    self?.episodeTextField.text = ""
+            .sink(receiveCompletion: { print("STOP\($0)") },
+                  receiveValue: { [weak self] results in
+                        self?.textLabel.text = results.name
+                        self?.textLabel2.text = results.gender
+                        self?.imageView.kf.setImage(with: URL(string: results.image))
+                        self?.locationTextField.text = ""
+                        self?.episodeTextField.text = ""
+                    
                   })
             .store(in: &subscriptions)
         
@@ -48,12 +55,14 @@ class ViewController: UIViewController {
             inputIdentifiersPublisher: inputNumberLocation)
         
         viewModel2?.location
-            .map { $0.description }
-            .catch { _ in Empty<String, Never>() }
+            .map { $0 }
+            .catch { _ in Empty<Location, Never>() }
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { print($0) },
-                  receiveValue: { [weak self] text in
-                    self?.textLabel.text = "Location: \(text)"
+                  receiveValue: { [weak self] results in
+                    self?.textLabel.text = results.name
+                    self?.textLabel2.text = results.type
+                    self?.imageView.kf.setImage(with: URL(string: ""))
                     self?.inputTextField.text = ""
                     self?.episodeTextField.text = ""
                   })

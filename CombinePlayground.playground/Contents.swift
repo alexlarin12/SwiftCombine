@@ -1,5 +1,7 @@
 import UIKit
+import Foundation
 import Combine
+
 
 
 private var subscriptions = Set<AnyCancellable>()
@@ -401,3 +403,4 @@ example(of: "Lesson3"){
     queue.asyncAfter(deadline: .now() + 0.7, execute: {
         pablisher1.send("day")
     })}
+
